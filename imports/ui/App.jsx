@@ -2,9 +2,14 @@ import React from 'react';
 import Scanner from "./react-codebar-reader";
 
 const App = () => {
+
+  let test = function(result){
+    console.log( result );
+  };
+
   return (
     <div>
-      <Scanner>
+      <Scanner onRead = {test}>
       </Scanner>
     </div>
   );
