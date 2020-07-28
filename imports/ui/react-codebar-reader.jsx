@@ -27,6 +27,12 @@ function ReactCodebarReader(props = {}){
     // iniciando la camara para escanear
     let start = function(){
         try {
+
+            if(typeof cordova !== "object" ){
+                window.alert("Disculpe esta funcion solo funciona en el te telefono");
+                throw "el plugin Cordova no ha sido detectado, por favor visita la siguiente pagina https://guide.meteor.com/cordova.html";
+            }
+
             let {onRead, open} = (typeof props == "object" ? props : {});
             if(typeof onRead != "function" )
                 throw `el prototipo onRead no es ta definido ${onRead}`;
